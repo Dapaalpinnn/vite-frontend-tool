@@ -1,10 +1,17 @@
 import { defineConfig } from "vite";
 
 export default defineConfig({
-    build: {
-        outDir: "production"
+  build: {
+    outDir: "production",
+    rollupOptions: {
+      input: {
+        index: "index.html",
+        blog: "other/blog.html",
+        contact: "other/contact.html",
+      },
     },
-    server: {
-        port: 3000
-    }
-})
+  },
+  server: {
+    port: 3000,
+  },
+});
